@@ -75,7 +75,9 @@ data_training_array = scaler.fit_transform(data_training.values.reshape(-1, 1))
 
 # Load the trained model
 # model = load_model('keras_model.h5')
-model = load_model("keras_model.h5", compile=False)
+# model = load_model("keras_model.h5", compile=False)
+model = load_model("keras_model_new.keras", compile=False)
+
 
 
 # Prepare the test data
