@@ -1,8 +1,7 @@
-tensorflow==2.10.0
-numpy<2
-protobuf==3.20.3
+tensorflow==2.20.0
+numpy
 streamlit
-pandas>=1.5,<3
+pandas
 scikit-learn
 matplotlib
 requests
