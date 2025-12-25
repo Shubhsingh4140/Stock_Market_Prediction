@@ -77,9 +77,12 @@ data_training_array = scaler.fit_transform(data_training.values.reshape(-1, 1))
 # model = load_model('keras_model.h5')
 # model = load_model("keras_model.h5", compile=False)
 # model = load_model("keras_model_new.keras", compile=False)
-import os
 
-MODEL_PATH = os.path.join(os.path.dirname(__file__), "keras_model_new.keras")
+import os
+from tensorflow.keras.models import load_model
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, "models", "keras_model_new.keras")
 
 model = load_model(
     MODEL_PATH,
@@ -87,11 +90,8 @@ model = load_model(
     safe_mode=False
 )
 
-# model = load_model(
-#     "keras_model_new.keras",
-#     compile=False,
-#     safe_mode=False
-# )
+
+
 
 
 
