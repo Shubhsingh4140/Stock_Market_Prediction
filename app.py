@@ -77,11 +77,21 @@ data_training_array = scaler.fit_transform(data_training.values.reshape(-1, 1))
 # model = load_model('keras_model.h5')
 # model = load_model("keras_model.h5", compile=False)
 # model = load_model("keras_model_new.keras", compile=False)
+import os
+
+MODEL_PATH = os.path.join(os.path.dirname(__file__), "keras_model_new.keras")
+
 model = load_model(
-    "keras_model_new.keras",
+    MODEL_PATH,
     compile=False,
     safe_mode=False
 )
+
+# model = load_model(
+#     "keras_model_new.keras",
+#     compile=False,
+#     safe_mode=False
+# )
 
 
 
