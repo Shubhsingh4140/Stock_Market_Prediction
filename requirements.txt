@@ -1,0 +1,8 @@
+tensorflow-macos==2.10.0
+numpy<2
+protobuf==3.20.3
+streamlit
+pandas>=1.5,<3
+scikit-learn
+matplotlib
+requests

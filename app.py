@@ -2,7 +2,9 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import requests
-from keras.models import load_model
+# from keras.models import load_model
+from tensorflow.keras.models import load_model
+
 import streamlit as st
 from sklearn.preprocessing import MinMaxScaler
 
@@ -72,11 +74,15 @@ scaler = MinMaxScaler(feature_range=(0, 1))
 data_training_array = scaler.fit_transform(data_training.values.reshape(-1, 1))
 
 # Load the trained model
-model = load_model('keras_model.h5')
+# model = load_model('keras_model.h5')
+model = load_model("keras_model.h5", compile=False)
+
 
 # Prepare the test data
 past_100_days = data_training.tail(100)
-final_df = past_100_days.append(data_testing, ignore_index=True)
+# final_df = past_100_days.append(data_testing, ignore_index=True)
+final_df = pd.concat([past_100_days, data_testing], ignore_index=True)
+
 input_data = scaler.fit_transform(final_df.values.reshape(-1, 1))
 
 x_test = []
